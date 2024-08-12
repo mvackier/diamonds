@@ -1,0 +1,21 @@
+---
+title: "make_plot"
+output: html_document
+date: "`r Sys.Date()`"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(ggplot2)
+data(diamonds)
+```
+
+Just a histogram
+
+```{r pressure, echo=FALSE}
+#create histogram of values for price
+ggplot(data=diamonds, aes(x=price)) +
+  geom_histogram(fill="steelblue", color="black") +
+  ggtitle("Histogram of Price Values")
+```
